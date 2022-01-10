@@ -13,8 +13,8 @@
                 return;
             }
 
-            // socket = io.connect('http://localhost:5000');
-            socket = io.connect('https://02d6-2402-8100-24e6-b3e7-7ccc-d815-60af-bfb2.ngrok.io');
+            socket = io.connect('http://localhost:5000');
+            // socket = io.connect('https://share-desktop-app.herokuapp.com/');
 
             socket.emit("join-message", room);
             socket.on('screen-data', function(message){

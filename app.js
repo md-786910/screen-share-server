@@ -1,7 +1,17 @@
 var app = require('express')();
 var http = require('http').createServer(app);
 const path = require('path');
-var io = require('socket.io')(http);
+
+const cors = require('cors')
+
+app.use(cors())
+var io = require('socket.io')(http, {
+    cors: {
+        origin: "*"
+    }
+});
+
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "./display.html"))
